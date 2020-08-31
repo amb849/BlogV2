@@ -1,0 +1,135 @@
+{% load static %}
+
+<html>
+    <style>
+        .list{
+            font-size: 20px;
+        }
+        .title{
+            position: relative;
+            margin-left: 450px;
+            text-align: center;
+            font-size: 23px;
+            font-family: serif;
+            z-index: 1;
+        }
+        
+    </style>
+    
+    <head>
+        <title>Alin Buzatu's CV</title>
+        <link rel="stylesheet" href="{% static 'css/cv.css' %}">
+    </head>
+
+<body style = "background-color: #E3EDD8;">
+    <img src = "{% static 'css/uob.png' %}" alt = "University of Birmingham" style = "float: right;width : 20%;height : 15%;">
+    <b><p class = "title">Alin-Marian Buzatu</p></b>
+    <b><p class = "title">8 Arley Road, Birmingham, B29 7BQ</p></b>
+    <p class = "title">Email: alinmarianbuzatu@gmail.com; Mobile: +40767769974</p><br /><br />
+
+    
+    <h1><b>Carrer profile</b></h1><hr>
+    <p class = "list">Currently a second year Computer Science student working towards becoming the best version of himself. Proven ability to work within a team, as well as a team leader, assuming full 
+        responsibility while driving everyone towards success as shown by the results of the First Tech Challenge competition from 2017. Can work under pressure and respect any given deadline 
+        while also being accurate in the work done. Seeking a placement year within the programming sector for 2020 – 2021.</p><br /><br />
+
+    <h1><b>Work Experience</b></h1><hr>
+    <div class = "list">
+    {% for post in exp %}
+        <p><u>{{ post.title }}</p></u>
+        {% if post.Comment_1 != "" %}
+            <li>{{ post.Comment_1 }}</li>
+        {% endif %}
+
+        {% if post.Comment_2 != "" %}
+            <li>{{ post.Comment_2 }}</li>
+        {% endif %}
+
+        {% if post.Comment_3 != "" %}
+            <li>{{ post.Comment_3 }}</li>
+        {% endif %}
+
+        {% if post.Comment_4 != "" %}
+            <li>{{ post.Comment_4 }}</li>
+        {% endif %}
+    {% endfor %}
+    </div>
+    <br /><br />
+    <h1><b>Education</b></h1><hr>
+
+    <div class = "list">
+        {% for post in education %}
+            <p><u>{{ post.title }}</u></p>
+            {% if post.Comment_1 != "" %}
+                <li>{{ post.Comment_1 }}</li>
+            {% endif %}
+
+            {% if post.Comment_2 != "" %}
+                <li>{{ post.Comment_2 }}</li>
+            {% endif %}
+
+            {% if post.Comment_3 != "" %}
+                <li>{{ post.Comment_3 }}</li>
+            {% endif %}
+
+            {% if post.Comment_4 != "" %}
+                <li>{{ post.Comment_4 }}</li>
+            {% endif %}
+
+            {% if post.Comment_5 != "" %}
+                <li>{{ post.Comment_5 }}</li>
+            {% endif %}
+
+            {% if post.Comment_6 != "" %}
+                <li>{{ post.Comment_6 }}</li>
+            {% endif %}
+
+            {% if post.Comment_7 != "" %}
+                <li>{{ post.Comment_3 }}</li>
+            {% endif %}
+
+            {% if post.Comment_8 != "" %}
+                <li>{{ post.Comment_8 }}</li>
+            {% endif %}
+
+            {% if post.Comment_9 != "" %}
+                <li>{{ post.Comment_9 }}</li>
+            {% endif %}
+        {% endfor %}
+    
+    </div>
+    <h1><b>Hobbies</b></h1><hr><div class = "list">
+    <li>Playing MOBA games and maintaining a League of Legends “semi-professional” team to compete in different contests.</li>
+    <li>Learning all the secrets of Kali Linux, discovering every function that this distro has to offer.</li>
+    <li>Further self-developing ethical hacking skills.</li><br /><br />
+    </div>
+
+    <h1><b>Additional skills</b></h1><hr><div class = "list">
+        {% for post in skills %}
+            {% if post.Comment_1 != "" %}
+                <li>{{ post.Comment_1 }}</li>
+            {% endif %}
+
+            {% if post.Comment_2 != "" %}
+                <li>{{ post.Comment_2 }}</li>
+            {% endif %}
+
+            {% if post.Comment_3 != "" %}
+                <li>{{ post.Comment_3 }}</li>
+            {% endif %}
+
+            {% if post.Comment_4 != "" %}
+                <li>{{ post.Comment_4 }}</li>
+            {% endif %}
+        {% endfor %}
+   
+    </div>
+
+    <h1><b>References</b></h1><hr><div class = "list">
+    <p>Available upon request.</p>
+    </div>
+
+
+</body>
+
+</html>
